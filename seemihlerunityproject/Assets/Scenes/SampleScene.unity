@@ -776,7 +776,7 @@ GameObject:
   - component: {fileID: 1178768356}
   - component: {fileID: 1178768357}
   m_Layer: 0
-  m_Name: CANERler
+  m_Name: "murgu\u015F irfan"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
