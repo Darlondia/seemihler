@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float jump;
     Vector2 vec;
     public Animator animator;
+    public AudioSource asc;
 
     void Start()
     {
@@ -17,9 +19,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
+        
+
+
+        //------ZIPLAMA--------
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.velocity = Vector2.up * jump;
+            rb.velocity = new Vector2(rb.velocity.x, jump);
         }
 
 
@@ -52,13 +60,13 @@ public class PlayerController : MonoBehaviour
         //----------SAGA HAREKET------------
         if (Input.GetKey("d"))
         {
-            rb.velocity = new Vector2(right*Time.deltaTime, 0);
+            rb.velocity = new Vector2(right*Time.deltaTime, rb.velocity.y);
         }
 
         //----------SOLA HAREKET------------
         if (Input.GetKey("a"))
         {
-            rb.velocity = new Vector2(-left * Time.deltaTime, 0);
+            rb.velocity = new Vector2(-left * Time.deltaTime, rb.velocity.y);
         }
 
     }
