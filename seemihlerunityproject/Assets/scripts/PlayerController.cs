@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public float right;
     public float left;
+    public float jump;
     Vector2 vec;
     public Animator animator;
 
@@ -16,6 +17,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.velocity = Vector2.up * jump;
+        }
+
+
+
         //---------SAGA DOGRU HAREKET ANIMASYONU----------------------
         if (Input.GetKeyDown("d"))
         {
