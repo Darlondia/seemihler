@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public float jump;
     Vector2 vec;
     public Animator animator;
-    public AudioSource asc;
+   
 
     void Start()
     {
