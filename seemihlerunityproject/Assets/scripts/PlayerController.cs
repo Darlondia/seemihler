@@ -9,33 +9,21 @@ public class PlayerController : MonoBehaviour
     public float jump;
     Vector2 vec;
     public Animator animator;
-    public AudioSource asc;
 
     void Start()
     {
         
     }
 
-
     void Update()
     {
 
-        //----SES----
-        if(Input.GetKeyDown("d"))
-        {
-            asc.Play();
-        }
-
-
-
         //------ZIPLAMA--------
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.velocity = new Vector2(rb.velocity.x, jump);
+            //BUNU DA KULLANABILIRSIN: rb.velocity = new Vector2(rb.velocity.x, jump);
+            rb.velocity = Vector2.up * jump;
         }
-
-
 
         //---------SAGA DOGRU HAREKET ANIMASYONU----------------------
         if (Input.GetKeyDown("d"))
