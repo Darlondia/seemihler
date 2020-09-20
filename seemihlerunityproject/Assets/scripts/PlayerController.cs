@@ -45,6 +45,11 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat("SpeedSol", 0);
         }
 
+
+        //-------------------------------TAYLAN BU ARAYA YAZ------------------------------------------
+
+        //-------------------------------TAYLAN BU ARAYA YAZ------------------------------------------
+
     }
 
     void FixedUpdate()
