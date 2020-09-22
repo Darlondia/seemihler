@@ -48,6 +48,8 @@ public class PlayerController : MonoBehaviour
 
         //-------------------------------TAYLAN BU ARAYA YAZ------------------------------------------
 
+        // YAZCAM TADLIM BEQLE
+
         //-------------------------------TAYLAN BU ARAYA YAZ------------------------------------------
 
     }
