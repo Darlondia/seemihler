@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
+<<<<<<< Updated upstream
 using System.Collections;
 
+=======
+>>>>>>> Stashed changes
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D rb;
@@ -9,7 +12,9 @@ public class PlayerController : MonoBehaviour
     public float jump;
     Vector2 vec;
     public Animator animator;
+    public 
 
+       
     void Start()
     {
         
@@ -17,6 +22,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+<<<<<<< Updated upstream
 
         //------ZIPLAMA--------
         if (Input.GetKeyDown(KeyCode.Space))
@@ -24,6 +30,9 @@ public class PlayerController : MonoBehaviour
             //BUNU DA KULLANABILIRSIN: rb.velocity = new Vector2(rb.velocity.x, jump);
             rb.velocity = Vector2.up * jump;
         }
+=======
+       
+>>>>>>> Stashed changes
 
         //---------SAGA DOGRU HAREKET ANIMASYONU----------------------
         if (Input.GetKeyDown("d"))
@@ -56,7 +65,8 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-
+        
+        
         //----------SAGA HAREKET------------
         if (Input.GetKey("d"))
         {
@@ -68,6 +78,9 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(-left * Time.deltaTime, rb.velocity.y);
         }
-
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.velocity = Vector2.up * jump;
+        }
     }
 }
