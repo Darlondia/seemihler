@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class groundCheck : MonoBehaviour
+public class EdgeCheck : MonoBehaviour
 {
     GameObject Player;
     // Start is called before the first frame update
@@ -17,20 +17,19 @@ public class groundCheck : MonoBehaviour
         
     }
 
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Ground")
+        if (collision.collider.tag == "Edge")
         {
-            Player.GetComponent<playermovement>().isGrounded = true;
+            Player.GetComponent<playermovement>().forceCutOnEdges = true;
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Ground")
+        if (collision.collider.tag == "Edge")
         {
-            Player.GetComponent<playermovement>().isGrounded = false;
+            Player.GetComponent<playermovement>().forceCutOnEdges = false;
         }
     }
 }

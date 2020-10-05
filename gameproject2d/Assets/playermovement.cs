@@ -12,6 +12,7 @@ public class playermovement : MonoBehaviour
     public float jump = 15f;
     public float down = 8f;
     public bool isGrounded = false;
+    public bool forceCutOnEdges = true;
 
 
 
@@ -26,7 +27,7 @@ public class playermovement : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (Input.GetKey("a"))
+        if (Input.GetKey("a")&&(!forceCutOnEdges))
         {
             rb.velocity = new Vector2(-left * Time.deltaTime, rb.velocity.y);
             if (Input.GetKey("s"))
@@ -35,7 +36,7 @@ public class playermovement : MonoBehaviour
             }
 
         }
-        if (Input.GetKey("d"))
+        if (Input.GetKey("d")&& (!forceCutOnEdges))
         {
             rb.velocity = new Vector2(right * Time.deltaTime, rb.velocity.y);
             if (Input.GetKey("s"))
@@ -43,7 +44,7 @@ public class playermovement : MonoBehaviour
                 rb.velocity = new Vector2(right * Time.deltaTime, -down);
             }
         }
-        if (Input.GetKeyDown("w")&& isGrounded == true)
+        if (Input.GetKeyDown("w")&& isGrounded)
         {
             rb.velocity = Vector2.up * jump;
         }
