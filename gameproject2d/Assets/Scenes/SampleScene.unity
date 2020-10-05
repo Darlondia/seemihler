@@ -112,6 +112,76 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &202656254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 202656255}
+  - component: {fileID: 202656257}
+  - component: {fileID: 202656256}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &202656255
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202656254}
+  m_LocalRotation: {x: 0.0025488993, y: -0, z: -0, w: 0.99999684}
+  m_LocalPosition: {x: 0.012000084, y: -1.187, z: -0.001}
+  m_LocalScale: {x: 1.0221705, y: 0.80964, z: 0.80964}
+  m_Children: []
+  m_Father: {fileID: 1099379766}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0.29200003, y: 0, z: 0}
+--- !u!114 &202656256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202656254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80adc4ac886bbec47a44fd0caf1b51b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &202656257
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202656254}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0077489316, y: -0.042152733}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.43518364, y: 0.097829714}
+  m_EdgeRadius: 0
 --- !u!1 &321544484
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,7 +195,7 @@ GameObject:
   - component: {fileID: 321544485}
   m_Layer: 0
   m_Name: ground1.2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -231,7 +301,7 @@ GameObject:
   - component: {fileID: 409488324}
   m_Layer: 0
   m_Name: ground3.1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -419,7 +489,7 @@ GameObject:
   - component: {fileID: 737788118}
   m_Layer: 0
   m_Name: ground4
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -525,7 +595,7 @@ GameObject:
   - component: {fileID: 1011650688}
   m_Layer: 0
   m_Name: ground1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -704,10 +774,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd68e31f9d51f83448ae239cea95ee53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 5
   rb: {fileID: 1099379764}
   right: 250
   left: 250
   jump: 15
+  down: 8
+  isGrounded: 0
 --- !u!50 &1099379764
 Rigidbody2D:
   serializedVersion: 4
@@ -722,8 +795,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 10
   m_LinearDrag: 3
-  m_AngularDrag: 0.5
-  m_GravityScale: 2
+  m_AngularDrag: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -785,10 +858,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1099379761}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.62, y: 1.13, z: 0}
+  m_LocalPosition: {x: -8.45, y: 1.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 519420032}
+  - {fileID: 202656255}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -805,7 +879,7 @@ GameObject:
   - component: {fileID: 1399977884}
   m_Layer: 0
   m_Name: ground3
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -911,7 +985,7 @@ GameObject:
   - component: {fileID: 1448242429}
   m_Layer: 0
   m_Name: ground1.3
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
