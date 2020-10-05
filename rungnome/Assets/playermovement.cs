@@ -6,9 +6,9 @@ public class playermovement : MonoBehaviour
 {
 
     public Rigidbody2D rb;
-    public float right;
-    public float left;
-    public float jump;
+    public float right = 250;
+    public float left = 250;
+    public float jump = 15;
     
     void FixedUpdate()
     {
