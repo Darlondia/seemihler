@@ -16,6 +16,11 @@ public class playermovement : MonoBehaviour
 
 
 
+    private void Start()
+    {
+       forceCutOnEdges = true;
+    }
+
     private void Update()
     {
 
@@ -27,7 +32,7 @@ public class playermovement : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (Input.GetKey("a")&&(!forceCutOnEdges))
+        if (Input.GetKey("a")&&forceCutOnEdges)
         {
             rb.velocity = new Vector2(-left * Time.deltaTime, rb.velocity.y);
             if (Input.GetKey("s"))
@@ -36,7 +41,7 @@ public class playermovement : MonoBehaviour
             }
 
         }
-        if (Input.GetKey("d")&& (!forceCutOnEdges))
+        if (Input.GetKey("d")&& forceCutOnEdges)
         {
             rb.velocity = new Vector2(right * Time.deltaTime, rb.velocity.y);
             if (Input.GetKey("s"))

@@ -21,7 +21,7 @@ public class EdgeCheck : MonoBehaviour
     {
         if (collision.collider.tag == "Edge")
         {
-            Player.GetComponent<playermovement>().forceCutOnEdges = true;
+            Player.GetComponent<playermovement>().forceCutOnEdges = false;
         }
     }
 
@@ -29,7 +29,7 @@ public class EdgeCheck : MonoBehaviour
     {
         if (collision.collider.tag == "Edge")
         {
-            Player.GetComponent<playermovement>().forceCutOnEdges = false;
+            Player.GetComponent<playermovement>().forceCutOnEdges = true;
         }
     }
 }
