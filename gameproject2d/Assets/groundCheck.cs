@@ -27,6 +27,7 @@ public class groundCheck : MonoBehaviour
         if (collision.collider.tag == "Ground")
         {
             Player.GetComponent<playermovement>().isGrounded = true;
+            Player.GetComponent<playermovement>().forceCutOnEdges = true;
         }
     }
 
@@ -35,6 +36,7 @@ public class groundCheck : MonoBehaviour
         if (collision.collider.tag == "Ground")
         {
             Player.GetComponent<playermovement>().isGrounded = false;
+            Player.GetComponent<playermovement>().forceCutOnEdges = true;
         }
     }
 }

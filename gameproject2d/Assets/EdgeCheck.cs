@@ -9,6 +9,8 @@ public class EdgeCheck : MonoBehaviour
     void Start()
     {
         Player = gameObject.transform.parent.gameObject;
+
+
     }
 
     // Update is called once per frame
