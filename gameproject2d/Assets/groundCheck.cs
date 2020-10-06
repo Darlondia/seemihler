@@ -17,6 +17,10 @@ public class groundCheck : MonoBehaviour
         
     }
 
+    private void FixedUpdate()
+    {
+        
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

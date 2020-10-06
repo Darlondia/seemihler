@@ -14,8 +14,6 @@ public class playermovement : MonoBehaviour
     public bool isGrounded = false;
     public bool forceCutOnEdges = true;
 
-
-
     private void Start()
     {
        forceCutOnEdges = true;
@@ -24,10 +22,7 @@ public class playermovement : MonoBehaviour
     private void Update()
     {
 
-       
-        
     }
-
 
     void FixedUpdate()
     {
